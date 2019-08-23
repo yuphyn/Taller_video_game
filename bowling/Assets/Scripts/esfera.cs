@@ -62,7 +62,8 @@ public class esfera : MonoBehaviour
     }
 
     void OnCollisionStay(Collision collision)
-    {
+    {	
+
         if (collision.collider.name == "pared"){
             Destroy(gameObject);
         }
