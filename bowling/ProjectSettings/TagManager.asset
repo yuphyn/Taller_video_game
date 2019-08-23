@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - pared
+  - pino
+  - pino2
+  - pino3
+  - pino4
+  - pino5
+  - pino6
+  - pino7
+  - pino8
+  - pino9
+  - pino1
   layers:
   - Default
   - TransparentFX
