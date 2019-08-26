@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.IO;
 
 public class Contar : MonoBehaviour
 {
@@ -25,17 +27,26 @@ public class Contar : MonoBehaviour
 	private int block7=0;
 	private int block8=0;
 	private int block9=0;
-	private int block=0;
 	private int flag=0;
+	public Text puntaje;
+
+
+	void Awake(){
+
+	}
     // Start is called before the first frame update
     void Start()
-    {		
-
+    {	
+    	PlayerPrefs.SetInt("PuntosactualesJ1",0);
+    	suelo= PlayerPrefs.GetInt("J1",0);
+    	//PlayerPrefs.DeleteAll()
     }
 
     // Update is called once per frame
     void Update()
     {	//Contar pinos en el suelo 
+    	//puntaje.text="Puntaje: ";
+
     	if (pino0.transform.eulerAngles.z>30 && pino0.transform.eulerAngles.z<95 && block0==0){
     		suelo=suelo+1;
     		block0=1;
@@ -112,13 +123,15 @@ public class Contar : MonoBehaviour
     		suelo=suelo+1;
     		block9=1;
     	}
-    	if(Input.GetKey(KeyCode.UpArrow)&& block==0) {
-            flag=300;
-            block=1;
+    	if(Input.GetKey(KeyCode.UpArrow)) {
+            flag=250;
       	}
       	if (flag==5){
-      		print(suelo);
+      		//print(suelo);
+      		puntaje.text="Puntaje: " + suelo.ToString();
+      		PlayerPrefs.SetInt("J1",suelo);
       	}
     	flag=flag-1;
     }
+
 }

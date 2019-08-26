@@ -22,7 +22,8 @@ public class Move_aroow : MonoBehaviour
         if(Input.GetKey(KeyCode.RightArrow))
         	transform.Rotate(Vector3.right, turnSpeed * Time.deltaTime);
         //Destrución
-        if(Input.GetKey(KeyCode.UpArrow))
-        	Destroy(gameObject);
+        /*if(Input.GetKey(KeyCode.UpArrow))
+        	gameObject.SetActive(false);
+            //Destroy(gameObject); */
     }
 }
