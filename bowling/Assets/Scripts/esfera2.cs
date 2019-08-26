@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class esfera : MonoBehaviour
+public class esfera2 : MonoBehaviour
 {
     public float moveSpeed = 8f; //Fuerza
     public float turnSpeed = 50f; //rotacion
@@ -16,15 +16,12 @@ public class esfera : MonoBehaviour
     private Vector3 posini;
     private int lanzamiento=0;
     public GameObject arrow;
-    public Text continuar;
     private int cambiar=0;
 
 	void Start(){
 		flag= 0;
 		block=0;
 		posini= transform.localPosition;
-
-
     }
     
     
@@ -80,10 +77,9 @@ public class esfera : MonoBehaviour
         	}
     	}
     	else {
-    		//continuar.SetActive(true);
     		cambiar=1;    		
     	}
-    	if (Input.GetKeyDown("return") && cambiar==1) SceneManager.LoadScene("jugador2");
+    	if (Input.GetKeyDown("return") && cambiar==1) SceneManager.LoadScene("jugador1");
 
     }
 

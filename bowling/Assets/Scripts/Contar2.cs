@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
-public class Contar : MonoBehaviour
+public class Contar2 : MonoBehaviour
 {
 	[SerializeField] private GameObject pino0;
 	[SerializeField] private GameObject pino1;
@@ -38,8 +38,7 @@ public class Contar : MonoBehaviour
     void Start()
     {	
     	PlayerPrefs.SetInt("PuntosactualesJ1",0);
-    	suelo= PlayerPrefs.GetInt("J1",0);
-    	int tipo=Random.Range(0,4);
+    	suelo= PlayerPrefs.GetInt("J2",0);
     	int poder=Random.Range (0, 9);
     	puntaje.text="Puntaje: " + suelo.ToString();
     	if(poder==0){
@@ -90,10 +89,8 @@ public class Contar : MonoBehaviour
     	if(poder==9){
     		Renderer rend = pino9.GetComponent<Renderer>();
         	rend.material.shader = Shader.Find("Specular");
-        	rend.material.SetColor("_Color", Color.blue);
-
-    	}   
-
+        	rend.material.SetColor("_Color", Color.blue);    		
+    	}
     	//PlayerPrefs.DeleteAll()
     }
 
@@ -101,6 +98,7 @@ public class Contar : MonoBehaviour
     void Update()
     {	//Contar pinos en el suelo 
     	//puntaje.text="Puntaje: ";
+
 
     	if (pino0.transform.eulerAngles.z>30 && pino0.transform.eulerAngles.z<95 && block0==0){
     		Renderer rend = pino0.GetComponent<Renderer>();
@@ -228,7 +226,7 @@ public class Contar : MonoBehaviour
       	if (flag==5){
       		//print(suelo);
       		puntaje.text="Puntaje: " + suelo.ToString();
-      		PlayerPrefs.SetInt("J1",suelo);
+      		PlayerPrefs.SetInt("J2",suelo);
       	}
     	flag=flag-1;
     }
