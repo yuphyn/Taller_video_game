@@ -14,6 +14,9 @@ public class Menu : MonoBehaviour
     	//Inicializar datos.
         PlayerPrefs.SetInt("J1",0);
         PlayerPrefs.SetInt("J2",0);
+        PlayerPrefs.SetInt("poderj1aj2",0);
+        PlayerPrefs.SetInt("poderj2aj1",0);
+        PlayerPrefs.SetInt("rondas",0);
         Dibujar();
     }
 

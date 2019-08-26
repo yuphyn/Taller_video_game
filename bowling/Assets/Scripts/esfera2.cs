@@ -22,6 +22,9 @@ public class esfera2 : MonoBehaviour
 		flag= 0;
 		block=0;
 		posini= transform.localPosition;
+		if(PlayerPrefs.GetInt("poderj1aj2",0)==1){
+			arrow.SetActive(false);
+		}
     }
     
     
@@ -57,7 +60,7 @@ public class esfera2 : MonoBehaviour
 	        }
         	if(flag==1){
         		transform.localPosition =posini;
-        		arrow.SetActive(true);
+        		if(PlayerPrefs.GetInt("poderj1aj2",0)==0) arrow.SetActive(true);
         		flag=0;
         		block=0;
         		var= 0.0f;
@@ -79,8 +82,13 @@ public class esfera2 : MonoBehaviour
     	else {
     		cambiar=1;    		
     	}
-    	if (Input.GetKeyDown("return") && cambiar==1) SceneManager.LoadScene("jugador1");
-
+    	if (Input.GetKeyDown("return") && cambiar==1) {
+    		int ron=PlayerPrefs.GetInt("rondas",0);
+    		ron=ron+1;
+    		if(ron<10)SceneManager.LoadScene("jugador1");
+    		else SceneManager.LoadScene("final");
+    		PlayerPrefs.SetInt("rondas",ron);
+    	}
     }
 
     void OnCollisionStay(Collision collision)
