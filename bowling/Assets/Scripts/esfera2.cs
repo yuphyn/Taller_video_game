@@ -85,7 +85,7 @@ public class esfera2 : MonoBehaviour
     	if (Input.GetKeyDown("return") && cambiar==1) {
     		int ron=PlayerPrefs.GetInt("rondas",0);
     		ron=ron+1;
-    		if(ron<10)SceneManager.LoadScene("jugador1");
+    		if(ron<5)SceneManager.LoadScene("jugador1");
     		else SceneManager.LoadScene("final");
     		PlayerPrefs.SetInt("rondas",ron);
     	}
